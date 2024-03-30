@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - env:
-        GH_TOKEN: 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
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run : |
         gh api /PATH
     
