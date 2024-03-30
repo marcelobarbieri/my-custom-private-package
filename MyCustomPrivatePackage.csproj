@@ -4,6 +4,13 @@
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+
+    <PackageId>MyCustomPrivatePackage</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Marcelo Barbieri</Authors>
+    <Company>barbieri.dev</Company>
+    <PackageDescription>Meu Pacote de Exemplo</PackageDescription>
+    <RepositoryUrl>https://github.com/marcelobarbieri/my-custom-private-package</RepositoryUrl>
   </PropertyGroup>
 
 </Project>
