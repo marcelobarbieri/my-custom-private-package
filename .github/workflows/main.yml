@@ -24,6 +24,6 @@ jobs:
       run: dotnet pack --configuration Release
 
     - name: Publish
-      run: dotnet nuget push "bin/Release/MyCustomPrivatePackageBarbieri.1.0.1.nupkg" -s https://nuget.pkg.github.com/marcelobarbieri/index.json 
+      run: dotnet nuget push "bin/Release/MyCustomPrivatePackageBarbieri.1.0.1.nupkg" -k ${{ secrets.GITHUB_TOKEN }} -s https://nuget.pkg.github.com/marcelobarbieri/index.json 
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
