@@ -23,6 +23,9 @@ jobs:
     - name: Create the Package
       run: dotnet pack --configuration Release
 
+    - name: Add Source
+      run: dotnet nuget add source https://nuget.pkg.github.com/marcelobarbieri/index.json -n github -u marcelodpbarbieri@gmail.com -p !Aw7phf:!NsKVl, --store-password-in-clear-text
+
     - name: Publish
       run: dotnet nuget push "bin/Release/MyCustomPrivatePackageBarbieri.1.0.1.nupkg" -k ${{ secrets.GITHUB_TOKEN }} -s https://nuget.pkg.github.com/marcelobarbieri/index.json 
       env:
