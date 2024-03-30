@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
-    <PackageId>MyCustomPrivatePackage</PackageId>
+    <PackageId>MyCustomPrivatePackageBarbieri</PackageId>
     <Version>1.0.0</Version>
     <Authors>Marcelo Barbieri</Authors>
     <Company>barbieri.dev</Company>
