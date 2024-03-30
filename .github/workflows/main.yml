@@ -8,14 +8,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    permissions: {}
 
     steps:
-    - env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run : |
-        gh api /marcelobarbieri
-    
     - uses: actions/checkout@main
 
     - name: Set up .NET Core
@@ -30,9 +24,9 @@ jobs:
       run: dotnet pack --configuration Release
 
     - name: Add Source      
-      run: dotnet nuget add source --username marcelobarbieri --password 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 --store-password-in-clear-text --name github "https://nuget.pkg.github.com/marcelobarbieri/index.json"
+      run: dotnet nuget add source --username marcelobarbieri --password ${{ GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/marcelobarbieri/index.json"
 
     - name: Publish
-      run: dotnet nuget push "bin/Release/*.nupkg" --api-key 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 --source https://nuget.pkg.github.com/marcelobarbieri/index.json
+      run: dotnet nuget push "bin/Release/*.nupkg" --api-key ${{ GITHUB_TOKEN }} --source https://nuget.pkg.github.com/marcelobarbieri/index.json
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
