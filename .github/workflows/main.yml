@@ -26,6 +26,12 @@ jobs:
     - name: Add Source      
       run: dotnet nuget add source --username marcelobarbieri --password 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 --store-password-in-clear-text --name github "https://nuget.pkg.github.com/marcelobarbieri/index.json"
 
+    - name: Disable Source
+      run: dotnet nuget disable source nuget.org
+
+    - name: Enable Source
+      run: dotnet nuget enable source nuget.org      
+
     - name: Publish
       run: dotnet nuget push "bin/Release/*.nupkg" --api-key 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 --source https://nuget.pkg.github.com/marcelobarbieri/index.json
       env:
