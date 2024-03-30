@@ -24,4 +24,4 @@ jobs:
       run: dotnet pack --configuration Release
 
     - name: Publish
-      run: dotnet nuget push "bin/Release/*.nupkg" -k ${{ secrets.GITHUB_TOKEN }} -s https://nuget.pkg.github.com/marcelobarbieri/index.json 
+      run: dotnet nuget push "bin/Release/*.nupkg" -n github -u marcelodpbarbieri@gmail.com -p !Aw7phf:!NsKVl, -s https://nuget.pkg.github.com/marcelobarbieri/index.json --store-password-in-clear-text
