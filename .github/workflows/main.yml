@@ -24,4 +24,4 @@ jobs:
       run: dotnet pack --configuration Release
 
     - name: Publish
-      run: dotnet nuget push "bin/Release/*.nupkg" -k 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 -s https://nuget.pkg.github.com/marcelobarbieri/index.json 
+      run: dotnet nuget push "bin/Release/MyCustomPrivatePackageBarbieri.1.0.0.nupkg" -k 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 -s https://nuget.pkg.github.com/marcelobarbieri/index.json 
