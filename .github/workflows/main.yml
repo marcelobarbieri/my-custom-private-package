@@ -24,9 +24,9 @@ jobs:
       run: dotnet pack --configuration Release
 
     - name: Add Source      
-      run: dotnet nuget add source --username marcelobarbieri --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/marcelobarbieri/index.json"
+      run: dotnet nuget add source --username marcelobarbieri --password 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 --store-password-in-clear-text --name github "https://nuget.pkg.github.com/marcelobarbieri/index.json"
 
     - name: Publish
-      run: dotnet nuget push "bin/Release/*.nupkg" --api-key ${{ secrets.NUGET_TOKEN }} --source https://nuget.pkg.github.com/marcelobarbieri/index.json
+      run: dotnet nuget push "bin/Release/*.nupkg" --api-key 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 --source https://nuget.pkg.github.com/marcelobarbieri/index.json
       env:
-        GITHUB_TOKEN: ${{ secrets.NUGET_TOKEN }}
+        GITHUB_TOKEN: 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
